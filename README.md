@@ -1,24 +1,23 @@
-# doj-backstage
+# doj-backstage（doj项目后台）
 
-## Project setup
+## 基础命令
+
+### 项目所含包引入
 ```
 pnpm install
 ```
 
-### Compiles and hot-reloads for development
+### 项目启动
 ```
-pnpm run serve
-```
-
-### Compiles and minifies for production
-```
-pnpm run build
+pnpm dev
 ```
 
-### Lints and fixes files
+### 项目打包
 ```
-pnpm run lint
+pnpm build
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 自动生成axios api接口 
+```
+openapi --input http://localhost:8100/api/v2/api-docs --output ./generated --client axios
+```
