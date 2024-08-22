@@ -19,5 +19,5 @@ pnpm build
 
 ### 自动生成axios api接口 
 ```
-openapi --input http://localhost:8100/api/v2/api-docs --output ./generated --client axios
+openapi --input http://localhost:8111/api/v3/api-docs --output ./api --client axios
 ```
