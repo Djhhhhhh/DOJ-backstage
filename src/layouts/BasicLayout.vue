@@ -9,6 +9,7 @@ const rout = (key) => {
 };
 
 const store = useStore();
+console.log(store);
 </script>
 <template>
   <a-layout class="layout">

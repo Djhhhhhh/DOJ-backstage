@@ -2,6 +2,7 @@
 import { reactive } from "vue";
 import { UserControllerService, UserLoginDTO } from "@/api";
 import { useRouter } from "vue-router";
+import { useStore } from "vuex";
 const route = useRouter();
 const user = reactive({
   userAccount: "",
@@ -11,9 +12,11 @@ const user = reactive({
  * 提交表单
  * @param data
  */
+const store = useStore();
 const handleSubmit = async () => {
   const res = await UserControllerService.loginUserUsingPost(user);
   if (res.code === 0) {
+    await store.dispatch("user/getLoginUser");
     alert("登录成功");
     route.push("/");
   } else {
