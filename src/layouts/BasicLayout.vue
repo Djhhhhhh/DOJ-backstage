@@ -20,7 +20,18 @@ console.log(store);
       breakpoint="xl"
       collapsible
     >
-      1
+      <a-menu
+        :default-open-keys="['1']"
+        :default-selected-keys="['0_3']"
+        :style="{ width: '100%' }"
+        @menu-item-click="onClickMenuItem"
+      >
+        <a-menu-item @click="rout('/write')"> markdown编辑器 </a-menu-item>
+        <a-menu-item @click="rout('/add/question')"> 添加题目 </a-menu-item>
+        <a-menu-item @click="rout('/manage/question')">
+          查询题目列表
+        </a-menu-item>
+      </a-menu>
     </a-layout-sider>
     <a-layout>
       <a-layout-header class="header">
